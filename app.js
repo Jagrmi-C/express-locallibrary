@@ -18,7 +18,7 @@ app.use(helmet());
 
 // mongoose
 // var mongoDB = 'mongodb://127.0.0.1/my_database';
-var mongoDB = 'mongodb://jagrmi:mlabfaust098@ds247121.mlab.com:47121/local_library_jagrmi'
+var mongoDB = process.env.mongoDB_URI || 'mongodb://jagrmi:mlabfaust098@ds247121.mlab.com:47121/local_library_jagrmi'
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
